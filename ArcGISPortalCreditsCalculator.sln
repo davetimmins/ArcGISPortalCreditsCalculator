@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcGISPortalCreditsCalculator", "ArcGISPortalCreditsCalculator\ArcGISPortalCreditsCalculator.csproj", "{435A779C-7B66-4A17-AA3A-5B448482074D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{209BD64E-F36C-48F4-B2DD-48E8DAD14426}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcGISPortalCreditsCalculator.Interface", "ArcGISPortalCreditsCalculator.Interface\ArcGISPortalCreditsCalculator.Interface.csproj", "{ABCFC268-54BA-4A51-8DBE-F9D3888244B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{435A779C-7B66-4A17-AA3A-5B448482074D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{435A779C-7B66-4A17-AA3A-5B448482074D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{435A779C-7B66-4A17-AA3A-5B448482074D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{435A779C-7B66-4A17-AA3A-5B448482074D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{209BD64E-F36C-48F4-B2DD-48E8DAD14426}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{209BD64E-F36C-48F4-B2DD-48E8DAD14426}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{209BD64E-F36C-48F4-B2DD-48E8DAD14426}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{209BD64E-F36C-48F4-B2DD-48E8DAD14426}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABCFC268-54BA-4A51-8DBE-F9D3888244B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABCFC268-54BA-4A51-8DBE-F9D3888244B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABCFC268-54BA-4A51-8DBE-F9D3888244B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABCFC268-54BA-4A51-8DBE-F9D3888244B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
