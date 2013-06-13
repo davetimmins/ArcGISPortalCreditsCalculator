@@ -1,19 +1,14 @@
-﻿using Newtonsoft.Json;
+﻿using ArcGIS.ServiceModel.Common;
+using ArcGIS.ServiceModel.Operation;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ArcGISPortalCreditsCalculator.Interface.Types
 {
-    public class Item : PortalObject, IRuleCollection
+    public class Item : PortalResponse, IRuleCollection, IEndpoint
     {
         public const String UrlTemplate = "content/items/{0}?f=json";
-
-        public Item()
-        {
-
-        }
 
         public Item(String itemId)
         {
@@ -21,9 +16,7 @@ namespace ArcGISPortalCreditsCalculator.Interface.Types
                 throw new ArgumentNullException("itemId");
             Id = itemId;
         }
-
-        public String Url { get { return String.Format(UrlTemplate, Id); } }
-
+        
         [JsonProperty("id")]
         public String Id { get; set; }
 
@@ -34,10 +27,23 @@ namespace ArcGISPortalCreditsCalculator.Interface.Types
         public long SizeInBytes { get; set; }               
 
         public IEnumerable<IRule> Rules { get; set; }
+
+        public string BuildAbsoluteUrl(string rootUrl)
+        {
+            return !RelativeUrl.Contains(rootUrl.Substring(6)) && !RelativeUrl.Contains(rootUrl.Substring(6))
+                       ? rootUrl + RelativeUrl
+                       : RelativeUrl;
+        }
+
+        public string RelativeUrl
+        {
+            get { return String.Format(UrlTemplate, Id); }
+        }
     }
 
     public static class ItemTypes
     {
+        public const String MapService = "Map Service";
         public const String FeatureService = "Feature Service";
         public const String GeocodingService = "Geocoding Service";
         public const String WebMap = "Web Map";

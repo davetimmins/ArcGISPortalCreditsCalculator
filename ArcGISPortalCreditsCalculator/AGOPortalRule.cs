@@ -1,15 +1,7 @@
 ﻿using ArcGISPortalCreditsCalculator.Interface;
 using ArcGISPortalCreditsCalculator.Interface.Types;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ArcGISPortalCreditsCalculator
 {    
@@ -21,6 +13,14 @@ namespace ArcGISPortalCreditsCalculator
         internal static Dictionary<string, Func<IRuleCollection>> RuleMap =
             new Dictionary<string, Func<IRuleCollection>>
             {                
+                { ItemTypes.MapService, () => new AGOPortalRule 
+                                                  {
+                                                      Rules = new List<IRule>
+                                                      {
+                                                          Resolve<MapTileGenerationRule>()
+                                                      } 
+                                                  }
+                },
                 { ItemTypes.FeatureService, () => new AGOPortalRule 
                                                   {
                                                       Rules = new List<IRule>
